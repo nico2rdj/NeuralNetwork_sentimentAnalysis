@@ -1,31 +1,35 @@
-This dataset was created for the Paper 'From Group to Individual Labels using Deep Features', Kotzias et. al,. KDD 2015
-Please cite the paper if you want to use it :)
 
-It contains sentences labelled with positive or negative sentiment, extracted from reviews of products, movies, and restaurants
+w2v
+	- data-sets
+	
+	- dico_cleaning.py: deletes words present more than once
+	
+	- data_sort.py: sorts data-set to write sent_analysis input files
+	
+	- sent_analysis.py: performs binary classification with a word2vec based neural network
 
-=======
-Format:
-=======
-sentence \t score \n
+amazon_cells_labelled.txt: amazon labelled dataset
 
+amazon_cells_labelled_w2v.txt: unlabelled amazon dataset 
 
-=======
-Details:
-=======
-Score is either 1 (for positive) or 0 (for negative)	
-The sentences come from three different websites/fields:
+amazon_cells_labelled_w2v.txt.zip: compressed unlabelled amazon data-set (input of word2vec_visualisation.py)
 
-imdb.com
-amazon.com
-yelp.com
+dicot.txt: optimized dictionary
 
-For each website, there exist 500 positive and 500 negative sentences. Those were selected randomly for larger datasets of reviews. 
-We attempted to select sentences that have a clearly positive or negative connotaton, the goal was for no neutral sentences to be selected.
+dictionary_building.py: builds the optimized dictionary
 
+forward_backward.py: 2 layer neural network (working with a random dictionary)
 
+forward_backward_dic.py: 2 layer neural network (working with dico.txt)
 
-For the full datasets look:
+imdb_labelled.txt: imdb data-set
 
-imdb: Maas et. al., 2011 'Learning word vectors for sentiment analysis'
-amazon: McAuley et. al., 2013 'Hidden factors and hidden topics: Understanding rating dimensions with review text'
-yelp: Yelp dataset challenge http://www.yelp.com/dataset_challenge
+logistic_regression.py: simple neural network (working with a random dictionary)
+
+logistic_regression_dic.py: simple neural network (working with dico.txt)
+
+word2vec_visualisation.py: computes the word2vec embedding graph
+
+wordListAmazon.txt: contains all the amazon data-set words
+
+yelp_labelled.txt: yelp data-set
